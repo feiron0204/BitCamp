@@ -1,0 +1,90 @@
+jk-------------
+			<리눅스명령어>
+
+pwd : 위치확인
+mkdir [폴더명] : 폴더생성
+
+cd A : A로 가기
+cd 현위치
+cd .. 부모로
+cd ~ : 기본위치
+
+ls		내용보기
+ls -al 		+숨김폴더까지
+
+clear	콘솔창 청소
+
+rm -rf [무엇] 	아묻따 삭제.
+
+cp 1.txt 2.txt 		복사
+
+cat x.txt  		 보기
+----------
+				<vim문법>
+
+vim x.txt (vim으로 편집할 텍스트 생성)(이미존재하면 덮어쓰기임)
+
+( i ) 	>>	인서트모드 >> 이것 후 내용 입력가능
+(esc) 	>>		 (i)모드나 (:)모드 취소가능(딴거 선택할때 esc하고 하면 됨)
+
+( : )+w 저장
+( : )+q 나가기
+( : )+wq (write & quit) 저장과 나가기
+----------
+				<git 명령어>
+
+git init 	.git생성
+
+git status 	untracked, modified, staged등 상태확인(체감상 제일 많이씀)
+
+git add [무엇] 	 스테이징
+git add . 		 전부
+git add 디렉토리/	 디렉토리 하위 전부
+
+git commit	로컬에 버전 저장+로그남김 (심플하게 커밋)
+git commit -a 	add포함한 commit인데 추천안함
+git commit -m "~"	메세지 바로 써서 커밋가능
+
+git log			로그보기
+git log 커밋주소		해당 커밋만 로그보기
+git log -p 		git diff 포함하여 보기
+git log --all(모든 브랜치) --graph(시각적으로) --oneline(너ㅓ무 장황하지 않게)
+
+git diff 커밋주소1..커밋주소2 	차이점보기
+
+git diff		내 최근 작업에 대해
+		(커밋 전 마지막 확인 기회)
+		(워크트리에 있을 때만, 스테이징 전에만)
+
+git checkout 커밋주소 : 이놈이 헤드일때로 이때로 되돌린다
+
+git reset HEAD : add(스테이징) 취소(로그가 하나도 없을 때는 이야기가 다름)
+git reset --hard : 이전 상태로 되돌린다(이미 add 했으면 늦음)
+git reset 커밋주소 --hard : 이게 최신 로그 일때로
+
+git revert 커밋주소 : 그것이 없었을 때로 간다
+그것은 남겨두고 그것이 없는 커밋을 새로 만든다!
+많이 예전으로 가고 싶을 때, 건너뛰지 말고, 역순으로 차차히 할 것(충돌남)
+---
+* git pull [remote이름] [브랜치]
+* git push [remote이름] [브랜치]
+ >> 때에 따라 remote명, 브랜치명 생략하고 git pull, git push만으로 동작할 때 있음
+
+git remote : 해당하는 원격저장소 확인
+git remote -v : +주소까지
+
+git remote add 별명 주소		>>기본사용방법
+
+git clone 주소
+git clone 주소 .     			폴더 안만들고 바로 클론
+
+git branch : 현재브랜치확인
+git branch -d [브랜치명] : 삭제
+git branch -D [브랜치명] : 강제삭제
+
+git checkout [브랜치]	브랜치 이동
+git checkout -b [브랜치]	새로 만들고 그 브랜치로 이동
+
+git push origin --delete [브랜치] : 원격 저장소 상 브랜치 삭제
+git push --set-upstream origin chan : 기본브랜치 설정
+----------
