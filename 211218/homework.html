@@ -5,6 +5,8 @@
 <style>
 body {margin: 50px;} 
 /* body {margin: auto;} */
+/*body 전체에 margin 50px*/
+
 ul.topnav {
   list-style-type: none;
   margin: 0;
@@ -12,8 +14,12 @@ ul.topnav {
   overflow: hidden;
   background-color: #333;
 }
+/*class topnav 로 설정된 ul 한테 설정되는 세팅*/
 
-ul.topnav li {float: left;}
+ul.topnav li {
+    float: left;
+}
+/*class topnav 로 설정된 ul의 li 자식들에게 설정되는 세팅*/
 
 ul.topnav li a {
   display: block;
@@ -22,26 +28,37 @@ ul.topnav li a {
   padding: 14px 16px;
   text-decoration: none;
 }
+/*class topnav 로 설정된 ul의 li 자식들의 a에게 설정되는 세팅*/
 
 ul.topnav li a:hover:not(.active) {background-color: #111;}
 
-ul.topnav li a.active {background-color: #4CAF50;}
+/*class topnav 로 설정된 ul의 li 자식들의 a중 active 클래스가 아닌애들한테만 설정되는 세팅*/
+/*마우스 올리면 검정색으로 배경을 바꿔라*/
 
-ul.topnav li.right {float: right;}
+ul.topnav li a.active {background-color: #4CAF50;}
+/*class topnav 로 설정된 ul의 li 자식들의 a중 active 클래스는 배경색 초록색해라*/
+
+ul.topnav li.right {
+    float: right;
+}
+/*class topnav 로 설정된 ul의 li 자식들의 a중 class right에게 설정되는 세팅*/
 
 @media screen and (max-width: 600px) {  /* 600px 이하  */
-  ul.topnav li.right, 
-  ul.topnav li {float: none;}
+  ul.topnav li.right, ul.topnav li {
+      float: none;
+    }
+/*class topnav 로 설정된 ul의 li 자식들 전부 스크린의 크기가 600px 이하가되면 float을 none으로 적용해라*/
+    
 }
 </style>
 </head>
 <body>
 
 <ul class="topnav">
-  <li><a class="active" href="#home">Home</a></li>
+   <li><a class="active" href="#home">Home</a></li>
   <li><a href="#news">News</a></li>
   <li><a href="#contact">Contact</a></li>
-  <li class="right"><a href="#about">About</a></li>
+  <li class="right"><a href="#about">About</a></li> 
 </ul>
 
 <div style="padding:0 16px;">
